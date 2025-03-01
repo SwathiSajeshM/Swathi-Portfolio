@@ -1,0 +1,17 @@
+@media (min-width:1025px) and (max-width:1444px){
+    .projmedia{
+        gap: 1.5rem;
+
+    }
+    .type-h-one{
+        font-size: 40px;
+    }
+    .type-p-one{
+        font-size: 15px;
+    }
+    
+    .remove-img{
+        padding-top: 18px;
+    }
+
+}

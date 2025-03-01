@@ -1,0 +1,82 @@
+import { FiSend } from "react-icons/fi";
+import Footer from "../footer/Footer";
+import Navbar from "../navbar/Navbar";
+import Navlink from "../props/Navlink";
+import { useState } from "react";
+import axios from "axios";
+import { FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+
+ function Contact() {
+  const [clientName, SetClientName]=useState("");
+  const [email, setEmail]=useState("");
+  const [messages, SetMessages]=useState(""); 
+// _______________Error Messages Start here ____________
+   const [errClientName, setErrClientName]=useState(false);
+   const [erremail, setErrEmail]=useState(false);
+   const [errmessages, setErrMessages]=useState(false);
+// _______________Error Messages End here ____________
+   const [successMsg, setSuccessMsg]=useState("");   
+// _______________ Email Validation start here ____________
+   const EmailValidation=(email)=>{ return String(email).toLowerCase().match(/[a-z0-9\._%+!$&*=^|~#%'`?{}/\-]+@([a-z0-9\-]+\.){1,}([a-z]{2,16})/) }
+   const handleName=(e)=>{ SetClientName(e.target.value)
+   setErrClientName(false)}
+   const handleEmail=(e)=>{setEmail(e.target.value)
+   setErrEmail(false) }
+   const handleMessages=(e)=>{SetMessages(e.target.value)
+   setErrMessages(false) }
+ 
+   const handleSend=(e)=>
+   { e.preventDefault()
+     if(!clientName){setErrClientName(true)}
+ 
+     if (!email){ setErrEmail(true) }else{
+     if(!EmailValidation(email)){ setErrEmail(true) }}
+     if(!messages) { setErrMessages(true) }
+     if (clientName && email && EmailValidation(email) && messages ){
+       axios.post("https://getform.io/f/apjjrlja",{
+         name:clientName,
+         email:email,
+         messages:messages });
+       setSuccessMsg(`Hello dear ${clientName}, Your messages has been sent successfully. Thank you for your time!`);
+       SetClientName("")
+       setEmail("")
+       SetMessages("") }
+   }
+    return (
+      <main className=" bg-gradient-to-tr from-black via-[#04040F]  to-[#120E3D] ">
+            <Navbar/>
+          <section className="min-h-screen w-full lg:px-44  md:px-24 px-11 sm:pt-36 bg-gradient-to-tr from-black via-[#04040F] to-[#120E3D]  py-20 md:py-32">
+            <div className="max-w-7xl mx-auto">
+              <Navlink titleone='Say' titletwo='Hello' />
+              <Navlink titlethree='Fill out the form below to get in touch with me. I&apos;m always excited to hear about new opportunities and I&apos;ll do my best to respond to your inquiry within 24 hours.' />
+            </div>
+            <section className="w-full px-4 py-12 md:py-16">
+              <div className="max-w-7xl mx-auto">
+{/*_________________________ Contact Info Cards _________________________________________*/}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4  mb-12">
+                  <div className="border border-[#d1ff1a]/20 rounded-lg p-4 "> <a href="https://www.linkedin.com/in/swathi-m-1a89032b4/"><span className="text-gray-400 flex items-center gap-1"><span><FaLinkedin/></span>Linkedin</span></a> </div> 
+                  <div className="border border-[#d1ff1a]/20 rounded-lg p-4 flex items-center gap-3"> <span className="text-gray-400 flex items-center justify-center gap-1"> <span><FaPhoneAlt/></span> 8921225912</span></div>       
+                  <div className="border border-[#d1ff1a]/20 rounded-lg p-4 flex items-center gap-4"> <span className="text-gray-400 flex items-center gap-1"> <span><IoMdMail/></span> swathimknr@gmail.com</span> </div>
+                </div>
+{/*______________________________________ Contact Form _______________________________*/}
+                {
+                  successMsg ? <p className="text-center text-base font-mono p-20 text-[#d1ff1a]/20">{successMsg}</p> : 
+                  <form id="form" action='https://getform.io/f/apjjrlja' method="POST" className="p-6 flex flex-col gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2"> <input onChange={handleName} value={clientName} type="text" id="fullName" placeholder="Name"  className={`${errClientName? "border-red-600 focus-visible:border-red-600":" border-zinc-600 focus-visible:border-[#d1ff1a]/20" }  w-full bg-transparent border-2 px-1 py-2 text-base text-gray-300 outline-none duration-300 `}  /> </div>
+                        <div className="space-y-2"> <input onChange={handleEmail} value={email} type="email" id="email" placeholder="Email" className={`${erremail? "border-red-600 focus-visible:border-red-600":" border-zinc-600 focus-visible:border-[#d1ff1a]/20"  }  w-full bg-transparent border-2 px-1 py-2 text-base text-gray-300  outline-none duration-300 `}  /> </div>
+                      </div>
+                        <div className="space-y-2"> <textarea onChange={handleMessages} value={messages}  id="message" cols="30" rows="4" placeholder="Your Message" className={`${errmessages?"border-red-600 focus-visible:border-red-600":"border-zinc-600 focus-visible:border-[#d1ff1a]/20"} w-full bg-transparent border-2 px-1 py-2 text-base text-gray-300 outline-none duration-300 resize-none `} /> </div>
+                        <button onClick={handleSend}  type="submit" className='text-base w-44 flex items-center gap-1 text-gray-300 hover:text-[#d1ff1a]/20 duration-200 '>Send Me Message <span className='mt-1 text-designColor'>{<FiSend/>}</span> </button>    
+                  </form>
+                }              
+              </div>
+            </section>
+          </section>
+             <Footer/>
+      </main>
+    )
+  }
+
+  export default Contact;
