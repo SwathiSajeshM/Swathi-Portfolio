@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <SocialMediaLink href="https://www.linkedin.com/in/swathi-m-1a89032b4/" icon={LiaLinkedin}/>
               <SocialMediaLink href="https://github.com/SwathiSajeshM" icon={FaGithub} />
-              <SocialMediaLink href="https://wa.me/892122591" icon={FaWhatsapp} />
+              <SocialMediaLink href="https://wa.me/918921225912" icon={FaWhatsapp} />
               <SocialMediaLink href="https://instagram.com/swathi_s_a_j_e_s_h" icon={FaInstagram} />           
             </div>
   {/*_____________________________________ Mobile menu button _______________________________________________________*/}
@@ -45,14 +45,14 @@ const Navbar = () => {
               <Link to="/" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Home</Link>
               <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>About</Link>
               <Link to="/projects" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Projects</Link>
-              <Link to="/services" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Blog</Link>
+              <Link to="/services" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Services</Link>
               <Link to="/contacts" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
   {/*_____________________________________ Social Icons - Mobile _______________________________________________________*/}
           <div className="px-5 pt-4 pb-6 flex justify-around border-t border-gray-800">
               <SocialMediaLink href="https://www.linkedin.com/in/swathi-m-1a89032b4/" icon={LiaLinkedin}/>
               <SocialMediaLink href="https://github.com/SwathiSajeshM" icon={FaGithub} />
-              <SocialMediaLink href="https://wa.me/892122591" icon={FaWhatsapp} />
+              <SocialMediaLink href="https://wa.me/918921225912" icon={FaWhatsapp} />
               <SocialMediaLink href="https://instagram.com/swathi_s_a_j_e_s_h" icon={FaInstagram} /> 
           </div>
         </div>
