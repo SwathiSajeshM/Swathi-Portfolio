@@ -1,4 +1,4 @@
-import { FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FiSend } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -59,7 +59,7 @@ import axios from "axios";
                         <a href="https://www.linkedin.com/in/swathi-m-1a89032b4/"> <span className="text-gray-400 flex items-center gap-1"> <span><FaLinkedin/></span>Linkedin </span></a>
                       </motion.div> 
                       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="border border-[#d1ff1a]/20 rounded-lg p-4 flex items-center gap-3">
-                        <span className="text-gray-400 flex items-center justify-center gap-1"> <span><FaPhoneAlt/></span> 8921225912</span>
+                        <span className="text-gray-400 flex items-center justify-center gap-1"> <span><FaInstagram/></span> swathi_s_a_j_e_s_h</span>
                       </motion.div>       
                       <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7 }} className="border border-[#d1ff1a]/20 rounded-lg p-4 flex items-center gap-4">
                         <span className="text-gray-400 flex items-center gap-1"> <span><IoMdMail/></span> swathimknr@gmail.com </span>

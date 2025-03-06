@@ -1,25 +1,42 @@
-import React from 'react'
-import Home from './components/home/Home'
-import About from './components/about/About'
-import Projects from './components/projects/Project'
-import Services from './components/services/Service'
-import Contact from './components/contact/Contact'
-import { Route,BrowserRouter as Router, Routes } from 'react-router-dom'
-import ScrollToTop from './components/ScrollToTop'
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import Projects from "./components/projects/Project";
+import Services from "./components/services/Service";
+import Contact from "./components/contact/Contact";
+import NotFound from "./components/notfound/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
+import Loading from "./components/loading/Loading"; 
+import Progressim from "./components/notfound/Progressim";
+import EmptyProjj from "./components/notfound/EmptyProjj";
 
 const App = () => {
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000); 
+  }, []);
+
   return (
-      <Router>
-        <ScrollToTop/>
-        <Routes>
-          <Route path='/'element={<Home/>}></Route>
-          <Route path='/about'element={<About/>}></Route>
-          <Route path='/projects'element={<Projects/>}></Route>
-          <Route path='/services'element={<Services/>}></Route>
-          <Route path='/contacts'element={<Contact/>}></Route>
-        </Routes>
-        </Router>   
-  )
-}
+    <Router>
+      {loading ? ( <Loading /> ) : (
+        <>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contacts" element={<Contact />} />
+            <Route path="/progress" element={<Progressim />} />
+            <Route path="/emptyprojj" element={<EmptyProjj />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </>
+      )}
+    </Router>
+  );
+};
 
 export default App;

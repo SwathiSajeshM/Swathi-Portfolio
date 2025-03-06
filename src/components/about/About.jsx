@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
             <Navbar/>
                 <section className="w-full bg-gradient-to-tr from-black via-[#04040F] to-[#120E3D] lg:px-44 md:px-24 px-11 lg:py-20 md:py-28 py-32 relative">
 {/*_______________________________ About heading, para and image _________________________*/}
-                    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="flex flex-col md:flex-col lg:flex-row lg:gap-14">
+                    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="flex flex-col md:flex-col lg:flex-row lg:gap-14 ">
                         <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="max-w-7xl mx-auto lg:py-10 md:py-5 py-3">
                             <Navlink titleone="About" titletwo="Me" />
                             <Navlink titlethree="Hello! I'm Swathi. Web developer from Kannur, India. I am a fresher with expertise in React, PHP, JavaScript, HTML, CSS, TailwindCSS, and Git. I enjoy creating functional and visually appealing web solutions." />

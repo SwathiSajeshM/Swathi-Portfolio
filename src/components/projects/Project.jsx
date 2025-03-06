@@ -1,7 +1,9 @@
+import ProjCardOverlay from "../props/ProjCardOverlay";
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import Navlink from "../props/Navlink";
 import img1 from "../../assets/projimg.jpg"
+import { motion } from "framer-motion";
 import remove1 from "../../assets/hostel.png"
 import remove2 from "../../assets/useless.png"
 import remove3 from "../../assets/todo.png"
@@ -10,8 +12,8 @@ import remove5 from "../../assets/nationalpark.png"
 import remove6 from "../../assets/valid.png"
 import remove7 from "../../assets/icecream.png"
 import remove8 from "../../assets/emptyproj.png"
-import ProjCardOverlay from "../props/ProjCardOverlay";
-import { motion } from "framer-motion";
+import remove9 from "../../assets/3dim.png"
+
 
  function Projects() {
     return (
@@ -28,14 +30,16 @@ import { motion } from "framer-motion";
               <div className="projmedia grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {/*_______________________________ Project Cards with Slide-in Animation _________________________*/}
                 {[
-                  { img: img1, remove: remove1, heading: "WEBSITE", description: "Hostel Project", para: "Accommodation Platform-(In progress)", link: "https://github.com/SwathiSajeshM/KL-Nest" },
-                  { img: img1, remove: remove2, heading: "WEBSITE", description: "Useless Project", para: "Fun & Experimental Projects", link: "https://github.com/SwathiSajeshM/UhOhIq", hosting: "https://swathisajeshm.github.io/UhOhIq/" },
+                  { img: img1, remove: remove9, heading: "WEBSITE", description: "Portfolio", para: "Welcome to my First portfolio", link: "https://github.com/SwathiSajeshM/mySamplePortfolio", hosting: "https://swathi-m.web.app/" },
+                  { img: img1, remove: remove2, heading: "WEBSITE", description: "Useless Project", para: "Fun & Experimental Projects", link: "https://github.com/SwathiSajeshM/UhOhIq", hosting: "https://swathisajeshm.github.io/UhOhIq/", },
                   { img: img1, remove: remove3, heading: "WEBSITE", description: "To-Do App", para: "Productivity Applications", link: "https://github.com/SwathiSajeshM/ToDoApp", hosting: "https://swathisajeshm.github.io/ToDoApp/" },
                   { img: img1, remove: remove4, heading: "WEBSITE", description: "Age Calculator", para: "Utility Tools", link: "https://github.com/SwathiSajeshM/Age-CalculatoR", hosting: "https://swathisajeshm.github.io/Age-CalculatoR/" },
                   { img: img1, remove: remove5, heading: "WEBSITE", description: "National Park", para: "API Integration", link: "https://github.com/SwathiSajeshM/API-Project-NationalPark", hosting: "https://na-ationalparksui.web.app" },
                   { img: img1, remove: remove6, heading: "WEBSITE", description: "Form Validation", para: "Javascript Functionality", link: "https://github.com/SwathiSajeshM/Form-Submission", hosting: "https://validation-formpro.web.app/" },
                   { img: img1, remove: remove7, heading: "WEBSITE", description: "Lazza Ice-Cream", para: "Demo Website", link: "https://github.com/SwathiSajeshM/Clone-Project-LazzaIceCream", hosting: "https://swathisajeshm.github.io/Clone-Project-LazzaIceCream/" },
-                  { img: img1, remove: remove8, heading: "WEBSITE", description: "Coming Soon", para: "Empty Project" }].map((project, index) => (
+                  { img: img1, remove: remove1, heading: "WEBSITE", description: "Hostel Project", para: "Accommodation Platform-(In progress)", link: "https://github.com/SwathiSajeshM/KL-Nest", hosting:'/progress' },
+                  { img: img1, remove: remove8, heading: "WEBSITE", description: "Coming Soon", para: "Empty Project",link:'/emptyprojj', hosting:'/emptyprojj' } 
+                 ].map((project, index) => (
                   <motion.div key={index} initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }}>
                     <ProjCardOverlay img1={project.img} remove1={project.remove} heading={project.heading} description={project.description} paragraf={project.para} link={project.link} hosting={project.hosting} />
                   </motion.div> ))}
