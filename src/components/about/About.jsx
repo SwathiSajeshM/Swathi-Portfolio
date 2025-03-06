@@ -29,7 +29,6 @@ import { motion } from "framer-motion";
                             <div className="relative aspect-square rounded-3xl max-w-md overflow-hidden"><img src={aboutimg} alt="" className="object-cover w-full h-full" priority /></div>
                         </motion.div>
                     </motion.div>
-
 {/*_______________________________ Another details and short info _________________________*/}
                     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }} className="max-w-7xl">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center md:pt-14 pt-16">

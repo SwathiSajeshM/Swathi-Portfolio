@@ -44,9 +44,9 @@ import axios from "axios";
     return (
       <main className=" bg-gradient-to-tr from-black via-[#04040F]  to-[#120E3D] ">
             <Navbar/>
-            <section className="min-h-screen w-full lg:px-44 md:px-24 px-11 sm:pt-36 bg-gradient-to-tr from-black via-[#04040F] to-[#120E3D] py-20 md:py-32">
+            <section className="w-full bg-gradient-to-tr from-black via-[#04040F] to-[#120E3D] lg:px-44 md:px-24 px-11 lg:py-20 md:py-28 py-32 relative">
   {/*_______________________________ Section Title (Fade-in & Slide-up) _________________________*/}
-                            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto">
+                            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto lg:py-10 md:py-5 py-3">
                               <Navlink titleone="Say" titletwo="Hello" />
                               <Navlink titlethree="Fill out the form below to get in touch with me. I'm always excited to hear about new opportunities and I'll do my best to respond to your inquiry within 24 hours." />
                             </motion.div>

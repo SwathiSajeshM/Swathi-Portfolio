@@ -1,11 +1,14 @@
-import { FaChalkboardTeacher, FaCode, FaGithub, FaPhp, FaReact } from "react-icons/fa";
-import { SiPostman } from "react-icons/si";
-import { motion } from "framer-motion";
 import ProjectCard from "../props/ProjectCard";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import Navlink from "../props/Navlink";
-import { h1 } from "framer-motion/client";
+import { FaChalkboardTeacher, FaGithub } from "react-icons/fa";
+import { SiPostman } from "react-icons/si";
+import { motion } from "framer-motion";
+import { GrPerformance } from "react-icons/gr";
+import { TbBrandLaravel } from "react-icons/tb";
+import { PiFigmaLogoBold } from "react-icons/pi";
+import { RiReactjsLine } from "react-icons/ri";
 
 
  function Services() {
@@ -22,15 +25,13 @@ import { h1 } from "framer-motion/client";
             <motion.div initial="hidden" animate="visible" variants={{hidden: { opacity: 0 },visible: { opacity: 1, transition: { staggerChildren: 0.2 } }}} className="max-w-7xl mx-auto py-9">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {/*_______________________________ Project Cards with Slide-in Animation _________________________*/}
-                    {[  
-    
-                        { icon: <FaReact className="w-6 h-6 text-black" />, title: "Frontend Development", titletwo: "Crafting responsive, user-friendly web interfaces using HTML, CSS, JavaScript, React, and Tailwind CSS." },
-                        { icon: <FaCode className="w-6 h-6 text-black" />, title: "UI/UX Design", titletwo: "Designing intuitive and visually appealing user experiences using Figma, ensuring seamless interaction and usability." },
+                    {[  { icon: <RiReactjsLine className="w-6 h-6 text-black" />, title: "Frontend Development", titletwo: "Crafting responsive, user-friendly web interfaces using HTML, CSS, JavaScript, React, and Tailwind CSS." },
+                        { icon: <PiFigmaLogoBold className="w-6 h-6 text-black" />, title: "UI/UX Design", titletwo: "Designing intuitive and visually appealing user experiences using Figma, ensuring seamless interaction and usability." },
                         { icon: <SiPostman className="w-6 h-6 text-black" />, title: "Full-Stack Integration", titletwo: "Bridging frontend and backend with API integration, handling seamless data flow between applications." },
-                        { icon: <FaChalkboardTeacher className="w-6 h-6 text-black" />, title: "Tutoring Services", titletwo: "Provide tutoring sessions on web development topics, helping beginners learn HTML, CSS, JavaScript, PHP, Laravel, and React." },
+                        { icon: <FaChalkboardTeacher className="w-6 h-6 text-black" />, title: "Tutoring Services", titletwo: "Provide tutoring sessions on web development topics, helping beginners learn HTML, CSS, JavaScript, PHP, Laravel,React, figma, step-by-step guidance." },
                         { icon: <FaGithub className="w-6 h-6 text-black" />, title: "Version Control & Deployment ", titletwo: "Managing projects with Git and GitHub while deploying applications on Firebase, Vercel, and Netlify for a smooth web experience." },
-                        { icon: <FaPhp className="w-6 h-6 text-black" />, title: "Backend Development", titletwo: "Design and develop secure and scalable server-side applications using PHP and Laravel. " },
-                        { icon: <FaPhp className="w-6 h-6 text-black" />, title: "Testing & Debugging ", titletwo: "Ensuring application performance with Postman API testing and debugging in VS Code and XAMPP." }
+                        { icon: <TbBrandLaravel className="w-6 h-6 text-black" />, title: "Backend Development", titletwo: "As I have basic knowledge of Laravel and PHP, I can develop simple backend functionalities, integrate APIs, and manage data flow between the frontend and database." },
+                        { icon: <GrPerformance className="w-6 h-6 text-black" />, title: "Testing & Debugging ", titletwo: "Ensuring application performance with Postman API testing and debugging in VS Code and XAMPP." }
                     ].map((service, index) => (
                         <motion.div key={index} initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: "easeOut" }}>
                             <ProjectCard icon={service.icon} title={service.title} titletwo={service.titletwo} />
