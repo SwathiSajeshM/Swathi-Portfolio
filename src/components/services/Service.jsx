@@ -22,7 +22,7 @@ import { RiReactjsLine } from "react-icons/ri";
                 <Navlink titlethree="Designing the future, one creative website at a time." />         
             </motion.div>
 {/*_______________________________ Services Grid with Staggered Animation _________________________*/}
-            <motion.div initial="hidden" animate="visible" variants={{hidden: { opacity: 0 },visible: { opacity: 1, transition: { staggerChildren: 0.2 } }}} className="max-w-7xl mx-auto py-9">
+            <motion.div initial="hidden" animate="visible" variants={{hidden: { opacity: 0 },visible: { opacity: 1, transition: { staggerChildren: 0.2 } },}} className="max-w-7xl mx-auto py-9">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {/*_______________________________ Project Cards with Slide-in Animation _________________________*/}
                     {[  { icon: <RiReactjsLine className="w-6 h-6 text-black" />, title: "Frontend Development", titletwo: "Crafting responsive, user-friendly web interfaces using HTML, CSS, JavaScript, React, and Tailwind CSS." },

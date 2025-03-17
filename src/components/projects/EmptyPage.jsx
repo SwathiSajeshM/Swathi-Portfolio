@@ -2,7 +2,7 @@ import React from "react";
 import emptyimg from "../../assets/empty1.png";
 import { Link } from "react-router-dom";
 
-const EmptyProjj = () => {
+const EmptyPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-24 bg-gradient-to-tr from-black via-[#04040F] to-[#120E3D] text-center">
       <div className="w-full max-w-md"><img src={emptyimg} alt="Coming Soon" className="w-full h-auto object-cover" /></div>
@@ -15,4 +15,4 @@ const EmptyProjj = () => {
   );
 };
 
-export default EmptyProjj;
+export default EmptyPage;

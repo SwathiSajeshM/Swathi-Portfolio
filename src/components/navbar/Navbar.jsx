@@ -21,8 +21,8 @@ const Navbar = () => {
   {/*_____________________________________ Logo _______________________________________________________*/}
             <div className="flex-shrink-0 w-20 justify-center items-center"> <Link to="/" ><img src={slogo} alt="" /></Link> </div>
   {/*_____________________________________ Desktop Navigation _______________________________________________________*/}
-            <div className="hidden md:flex items-center space-x-8">
-              <NavItem path="/" navitem="Home" />
+            <div className="hidden md:flex items-center space-x-8 ">
+              <NavItem path="/" navitem="Home"  />
               <NavItem path="/about" navitem="About" />
               <NavItem path="/projects" navitem="Projects" />
               <NavItem path="/services" navitem="Services" />
@@ -42,11 +42,11 @@ const Navbar = () => {
   {/*_____________________________________ Mobile menu _______________________________________________________*/}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-[#0a0a1b]`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link to="/" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Home</Link>
-              <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>About</Link>
-              <Link to="/projects" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Projects</Link>
-              <Link to="/services" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Services</Link>
-              <Link to="/contacts" className="block px-3 py-2 rounded-md hover:bg-gray-800" onClick={() => setIsOpen(false)}>Contact</Link>
+              <Link to="/" className="relative block px-3 py-2 rounded-md after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:after:w-full" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/about" className="relative block px-3 py-2 rounded-md after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:after:w-full" onClick={() => setIsOpen(false)}>About</Link>
+              <Link to="/projects" className="relative block px-3 py-2 rounded-md after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:after:w-full" onClick={() => setIsOpen(false)}>Projects</Link>
+              <Link to="/services" className="relative block px-3 py-2 rounded-md after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:after:w-full" onClick={() => setIsOpen(false)}>Services</Link>
+              <Link to="/contacts" className="relative block px-3 py-2 rounded-md after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:after:w-full" onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
   {/*_____________________________________ Social Icons - Mobile _______________________________________________________*/}
           <div className="px-5 pt-4 pb-6 flex justify-around border-t border-gray-800">
